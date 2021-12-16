@@ -22,7 +22,7 @@ class Language():
             count += 1
 
             print('Твій шифр Цезаря: ', end='')
-            Logic.change_word_ua()
+            Logic.change_word_ua(text, side_shift, number_shift)
             print()
             more = input('Ще? так/ні/вибрати мову: ')
             if more == 'вибрати мову':
@@ -80,7 +80,7 @@ class Language():
             count += 1
 
             print('Твой шифр Цезаря: ', end='')
-            Logic.change_word_ru()
+            Logic.change_word_ru(text, side_shift, number_shift)
             print()
             more = input('Еще? да/нет/выбрать язык: ')
             if more == 'выбрать язык':
