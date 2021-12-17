@@ -18,8 +18,8 @@ class Menu_base:
     """Main menu on your language"""
     def menu():
         """1 = cipher, 2 = decipher"""
-        if cipher_decipher == '1' and '2':
-            """Russian start and end menu"""
+        if cipher_decipher == '1' or '2':
+            """Russian cipher start and end menu"""
             if language == '3' and cipher_decipher == '1':
                 more = '1'
                 while more == '1':
@@ -34,7 +34,7 @@ class Menu_base:
                         more = input('Попробуй еще, да[1]/выход[2]/меню[3]: ')
                     if more == '1':
                         Menu_base.menu()
-            """Ukrainian start and end menu"""
+            """Ukrainian cipher start and end menu"""
             if language == '1' and cipher_decipher == '1':
                 more = '1'
                 while more == '1':
@@ -49,7 +49,7 @@ class Menu_base:
                         more = input('Спробуй ще, так[1]/завершити[2]/меню[3]: ')
                     if more == '1':
                         Menu_base.menu()
-            """English start and end menu"""
+            """English cipher start and end menu"""
             if language == '2' and cipher_decipher == '1':
                 more = '1'
                 while more == '1':
@@ -62,6 +62,52 @@ class Menu_base:
                         Menu_base.exit()
                     while more != '1' and more != '2' and more != '3':
                         more = input('Please try again, yes[1]/exit[2]/menu[3]: ')
+                    if more == '1':
+                        Menu_base.menu()
+
+            """Ukrainian decipher start and end menu"""
+            if language == '1' and cipher_decipher == '2':
+                more = '1'
+                while more == '1':
+                    print('Вітаю, ласкаво просимо до дешифратора Цезаря!')
+                    Logic.ua_data_de()
+                    more = input('Ще? так[1]/завершити[2]/меню[3]: ')
+                    if more == '3':
+                        Menu_base.cipher_decipher_menu()
+                    if more == '2':
+                        Menu_base.exit()
+                    while more != '1' and more != '2' and more != '3':
+                        more = input('Спробуй ще, так[1]/завершити[2]/меню[3]: ')
+                    if more == '1':
+                        Menu_base.menu()
+            """English decipher start and end menu"""
+            if language == '2' and cipher_decipher == '2':
+                more = '1'
+                while more == '1':
+                    print('Hey! Welcome to the Caesar Decipher.')
+                    Logic.eng_data_de()
+                    more = input('More? yes[1]/exit[2]/menu[3]: ')
+                    if more == '3':
+                        Menu_base.cipher_decipher_menu()
+                    if more == '2':
+                        Menu_base.exit()
+                    while more != '1' and more != '2' and more != '3':
+                        more = input('Спробуй ще, так[1]/завершити[2]/меню[3]: ')
+                    if more == '1':
+                        Menu_base.menu()
+            """Russian decipher start and end menu"""
+            if language == '3' and cipher_decipher == '2':
+                more = '1'
+                while more == '1':
+                    print('Добро пожаловать в дешифратор Цезаря!')
+                    Logic.ru_data_de()
+                    more = input('Еще? да[1]/выход[2]/меню[3]: ')
+                    if more == '3':
+                        Menu_base.cipher_decipher_menu()
+                    if more == '2':
+                        Menu_base.exit()
+                    while more != '1' and more != '2' and more != '3':
+                        more = input('Спробуй ще, так[1]/завершити[2]/меню[3]: ')
                     if more == '1':
                         Menu_base.menu()
 
