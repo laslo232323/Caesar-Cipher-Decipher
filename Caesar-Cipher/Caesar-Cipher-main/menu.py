@@ -65,14 +65,6 @@ class Menu_base:
                     if more == '1':
                         Menu_base.menu()
 
-            # else:
-                # if language == '3' and cipher_decipher == '2':
-                    # Language.ru_decipher()
-                # if language == '1' and cipher_decipher == '2':
-                    # Language.ua_decipher()
-                # if language == '2' and cipher_decipher == '2':
-                   #  Language.eng_decipher()
-
     """Exit program"""
     def exit():
         """Farewell text depending on the selected language"""
@@ -87,5 +79,3 @@ class Menu_base:
 
 # Start program
 Menu_base.cipher_decipher_menu()
-
-
