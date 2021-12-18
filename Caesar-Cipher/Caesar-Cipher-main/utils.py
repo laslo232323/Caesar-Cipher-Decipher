@@ -3,11 +3,13 @@ class Logic:
 
     """Cipher"""
     def change_word_eng(text, side_shift, number_shift):
-        """Logic cipher"""
+        """Logic cipher english text"""
         if side_shift == '2':
             for c in text:
                 flag = False
+                """Small case"""
                 if c in 'abcdefghijklmnopqrstuvwxyz':
+                    """Side shift right"""
                     if ord(c) + number_shift > 122:
                         if ord(c) + number_shift - 26 <= 122:
                             print(chr(ord(c) + number_shift - 26), end='')
@@ -17,7 +19,9 @@ class Logic:
                             flag = True
                     if flag == False:
                         print(chr(ord(c) + number_shift), end='')
+                """large case"""
                 if c in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ':
+                    """Side shift right"""
                     if ord(c) + number_shift > 90 and ord(c) + number_shift < 97 + number_shift:
                         if ord(c) + number_shift - 26 <= 90:
                             print(chr(ord(c) + number_shift - 26), end='')
@@ -33,7 +37,9 @@ class Logic:
         if side_shift == '1':
             for c in text:
                 flag = False
+                """Small case"""
                 if c in 'abcdefghijklmnopqrstuvwxyz':
+                    """Side shift right"""
                     if ord(c) - number_shift <= 97:
                         if ord(c) - number_shift + 26 > 122:
                             print(chr(ord(c) - number_shift + 26 - 26), end='')
@@ -43,7 +49,9 @@ class Logic:
                             flag = True
                     if flag == False:
                         print(chr(ord(c) - number_shift), end='')
+                """large case"""
                 if c in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ':
+                    """Side shift right"""
                     if ord(c) - number_shift <= 65:
                         if ord(c) - number_shift + 26 > 90:
                             print(chr(ord(c) - number_shift + 26 - 26), end='')
@@ -57,7 +65,7 @@ class Logic:
                     print(c, end='')
 
     def change_word_ua(text, side_shift, number_shift):
-        """Logic cipher"""
+        """Logic cipher ukrainian text"""
         ukr_lower = 'абвгґдеєжзиіїйклмнопрстуфхцчшщьюя'
         ukr_upper = 'АБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯ'
         if side_shift == '2':
@@ -97,7 +105,7 @@ class Logic:
                     print(c, end='')
 
     def change_word_ru(text, side_shift, number_shift):
-        """Logic cipher"""
+        """Logic cipher russian text"""
         ru_lower = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'
         ru_upper = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'
         if side_shift == '2':
@@ -139,7 +147,6 @@ class Logic:
 
     """Decipher"""
     def decipher_eng(text):
-        """Logic decipher"""
         eng_lower = 'abcdefghijklmnopqrstuvwxyz'
         eng_upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
         for i in range(26):
@@ -162,7 +169,6 @@ class Logic:
             print()
 
     def decipher_ukr(text):
-        """Logic decipher"""
         ukr_lower = 'абвгґдеєжзиіїйклмнопрстуфхцчшщьюя'
         ukr_upper = 'АБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯ'
         for i in range(33):
@@ -185,7 +191,6 @@ class Logic:
             print()
 
     def decipher_ru(text):
-        """Logic decipher"""
         ru_lower = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'
         ru_upper = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'
         for i in range(33):
@@ -254,7 +259,7 @@ class Logic:
 
     def ru_data_de():
         text = input('Введите зашифрованный текст на русском языке: ')
-        Logic.decipher_eng(text)
+        Logic.decipher_ru(text)
         print()
 
     def eng_data_de():
